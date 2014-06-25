@@ -11,5 +11,5 @@ grunt_template
 6. Устанавливаем и конфигурируем плагины 
 
 
-| Name | Description          | third |
-| Help      | ~~Display the~~ help window.| асув |
+| Name | Description          | cde |
+| Help      | cde | verver|
