@@ -10,7 +10,8 @@ grunt_template
 5. Очередь ´Gruntfile.js´ появиться на сцене!
 6. Устанавливаем и конфигурируем плагины 
 
-
+| Название  | Код  | Описание |
+|--------- | --------------- | -------------
 | col 3 is      | some wordy text | $1600 |
 | col 2 is      | centered        |   $12 |
 | zebra stripes | are neat        |    $1 |
