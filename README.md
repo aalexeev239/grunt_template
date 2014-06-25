@@ -11,5 +11,9 @@ grunt_template
 6. Устанавливаем и конфигурируем плагины 
 
 | task  | code | Third |
+
+
 | task  | code | Third |
+
+
 | task  | ~code~ | Third |
