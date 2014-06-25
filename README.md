@@ -10,5 +10,8 @@ grunt_template
 5. Очередь ´Gruntfile.js´ появиться на сцене!
 6. Устанавливаем и конфигурируем плагины 
 
+
+| Name | Description          |
+| ------------- | ----------- |
 | Help      | ~~Display the~~ help window.|
 | Close     | _Closes_ a window     |
