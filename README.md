@@ -10,9 +10,9 @@ grunt_template
 5. Очередь ´Gruntfile.js´ появиться на сцене!
 6. Устанавливаем и конфигурируем плагины 
 
-| task  | *code* | Third |
-| task  | *code* | Third |
-| task  | 'code' | Third |
+| task  | code | Third |
+| task  | code | Third |
+| task  | ~code~ | Third |
 
 
 <!-- <ul>
