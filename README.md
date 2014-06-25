@@ -11,9 +11,8 @@ grunt_template
 6. Устанавливаем и конфигурируем плагины 
 
 | task  | 'code' | Third |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| task  | 'code' | Third |
+| task  | 'code' | Third |
 
 
 <ul>
