@@ -15,7 +15,7 @@ grunt_template
 | task  | 'code' | Third |
 
 
-<ul>
+<!-- <ul>
               <li>
                 <div class="plugin-item">
                   <h3>load-grunt-tasks</h3>
@@ -96,4 +96,4 @@ grunt_template
                   <p>Описание</p>
                   <p>Пропиши <code>'код'</code> в задания</p>
                 </div>
-              </li>
+              </li> -->
