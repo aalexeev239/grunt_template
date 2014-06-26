@@ -13,14 +13,14 @@ grunt_template
 #Плагины
 
 ###Load tasks
-Не паримся с подгрузкой заданий. [Ссыль](https://www.npmjs.org/package/load-grunt-tasks)
+Не паримся с подгрузкой заданий в `Gruntfile.js`. [Ссыль](https://www.npmjs.org/package/load-grunt-tasks)
 
 ```
 npm install load-grunt-tasks --save-dev
 ```
 
 ###Concat
-собирает все файлы в один. [Ссыль](https://www.npmjs.org/package/grunt-contrib-concat)
+Cобирает все файлы в один. [Ссыль](https://www.npmjs.org/package/grunt-contrib-concat)
 
 ```
 npm install grunt-contrib-concat --save-dev
