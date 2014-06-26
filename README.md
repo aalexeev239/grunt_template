@@ -1,7 +1,7 @@
 grunt_template
 ==============
 
-# How to set up Grunt
+# Устанавливаем GRUNT
 
 1. Запустите терминал и перейдите в нужную директорию `cd projectname`.
 2. Убедитесь в наличии стартового файла `package.json`.
