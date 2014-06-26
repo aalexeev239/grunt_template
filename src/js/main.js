@@ -5,8 +5,9 @@ $(document).ready(function() {
   
   // test jQuery
   $('.col-xs-4').eq(1).find('p')
-    .hide()
-    .closest('.col-xs-4').on('click', function () {
-      $(this).find('p').slideToggle(400);
-    });; 
+  .hide();
+  // .closest('.col-xs-4').click(function(){
+  $('.col-xs-4').eq(1).click(function(){
+    $(this).find('p').slideToggle(400);
+  });
 });

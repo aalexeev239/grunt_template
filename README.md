@@ -27,6 +27,13 @@ npm install load-grunt-tasks --save-dev
 npm install --save-dev time-grunt
 ```
 
+###Copy
+Копируем файлы [Линк](https://www.npmjs.org/package/time-grunt)
+
+```
+npm install grunt-contrib-copy
+```
+
 ###Concat
 Cобирает все файлы в один. [Линк](https://www.npmjs.org/package/grunt-contrib-concat)
 
@@ -83,6 +90,15 @@ npm install grunt-autoprefixer --save-dev
 ```
 npm install grunt-contrib-cssmin --save-dev
 ```
+
+
+###Clean
+Удаляет файлы. [Линк](https://github.com/gruntjs/grunt-contrib-clean)
+
+```
+npm install grunt-contrib-clean --save-dev
+```
+
 
 ###Заголовок
 Описание. [Линк]()
