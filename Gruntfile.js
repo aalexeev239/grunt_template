@@ -15,12 +15,13 @@ module.exports = function(grunt) {
     },
 
     //конкатенация файлов
+    //jquery находится в папке lib, но не подключается
     concat: {
       // options: {
       //   separator: ';'
       // },
       dist: {
-        src: ['<%= config.src %>/js/lib/*.js', '<%= config.src %>/js/main.js'],    
+        src: ['<%= config.src %>/js/lib/*.js', '!<%= config.src %>/js/lib/jquery-1.11.1.min.js', '<%= config.src %>/js/main.js'],    
         dest: '<%= config.src %>/js/build/<%= pkg.name %>.js'
       }
     },
