@@ -171,6 +171,31 @@ module.exports = function(grunt) {
       },
     },
 
+    //заливка на ftp
+    //требует файла .ftppass
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'hostname',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: '<%= config.dist %>',
+        dest: '<%= pkg.name %>/<%= config.dist %>',
+        exclusions: ['<%= config.dist %>/**/.DS_Store', '<%= config.dist %>/**/Thumbs.db']
+      },
+      source: {
+        auth: {
+          host: 'hostname',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: '<%= config.src %>',
+        dest: '<%= pkg.name %>/<%= config.src %>',
+        exclusions: ['<%= config.src %>/**/.DS_Store', '<%= config.src %>/**/Thumbs.db']
+      }
+    },
+
     // чистка файлов
     // фикс от гита
     clean: {

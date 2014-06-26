@@ -116,8 +116,15 @@ npm install grunt-contrib-cssmin --save-dev
 npm install grunt-contrib-clean --save-dev
 ```
 
+###FTP deploy
+Заливает файл по ftp. Требуется указать файл `.ftppass` в папке с `Gruntfile.js` [Линк](https://github.com/zonak/grunt-ftp-deploy)
 
-<!-- ###Заголовок
+```
+npm install grunt-ftp-deploy --save-dev
+```
+
+<!--
+###Заголовок
 Описание. [Линк]()
 
 ```
