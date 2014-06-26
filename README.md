@@ -10,120 +10,45 @@ grunt_template
 5. Очередь `Gruntfile.js` 'появиться' на сцене!
 6. Устанавливаем и конфигурируем плагины 
 
-| Название  | Код  | Описание |
-|--------- | --------------- | -------------
-| Load Tasks | ```npm install --save-dev load-grunt-tasks``` | Регистрирует в `Gruntfile.js` все загруженные задания|
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
-| text | `text` | text |
+#Плагины
 
-<!--    <ul>
-              <li>
-                <div class="plugin-item">
-                  <h3>load-grunt-tasks</h3>
-                  <p><code>npm install --save-dev load-grunt-tasks</code></p>
-                  <p>Не паримся с подгрузкой заданий</p>
-                  <p>Прописываем <code>require('load-grunt-tasks')(grunt);</code> вместо <code>grunt.loadNpmTasks('grunt-task')</code> в <strong>Gruntfile.js</strong></p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                npm install grunt-contrib-concat --save-dev
-                  <h3>Concat</h3>
-                  <p><code>npm install grunt-contrib-concat --save-dev</code></p>
-                  <p>собирает все файлы в один</p>
-                  <p>Пропиши <code>'concat'</code> в задания</p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                  <h3>Uglify</h3>
-                  <p><code>npm install grunt-contrib-uglify --save-dev</code></p>
-                  <p>Сжать js</p>
-                  <p>Пропиши <code>'uglify'</code> в задания</p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                  <h3>JShint</h3>
-                  <p><code>npm install grunt-contrib-jshint --save-dev</code></p>
-                  <p>Заставляет тебя плакать, глядя на код</p>
-                  <p>Пропиши <code>grunt jshint</code> в терминале</p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                  <h3>Imagemin</h3>
-                  <p><code>npm install grunt-contrib-imagemin --save-dev</code></p>
-                  <p>Ужимает картинки</p>
-                  <p>Вызов <code>'imagemin'</code> в терминале</p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                  <h3>Watch</h3>
-                  <p><code>npm install grunt-contrib-watch --save-dev</code></p>
-                  <p>Описание</p>
-                  <p>Пропиши <code>'код'</code> в задания</p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                  <h3>Less</h3>
-                  <p><code>npm install grunt-contrib-less --save-dev</code></p>
-                  <p>Описание</p>
-                  <p>Пропиши <code>'код'</code> в задания</p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                  <h3>Autoprefixer</h3>
-                  <p><code>npm install grunt-autoprefixer --save-dev</code></p>
-                  <p>Префиксы на css</p>
-                  <p>Иногда обновляй базу префиксов <code>npm update caniuse-db</code></p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                  <h3>CSS-min</h3>
-                  <p><code>npm install grunt-contrib-cssmin --save-dev</code></p>
-                  <p>Минификация Css</p>
-                  <p>Пропиши <code>'код'</code> в задания</p>
-                </div>
-              </li>
-              <li>
-                <div class="plugin-item">
-                  <h3>Заголовок</h3>
-                  <p><code>plugin</code></p>
-                  <p>Описание</p>
-                  <p>Пропиши <code>'код'</code> в задания</p>
-                </div>
-              </li>
-            </ul> -->
+##Load tasks
+Не паримся с подгрузкой заданий
+```npm install --save-dev load-grunt-tasks```
+
+##Concat
+собирает все файлы в один
+```npm install grunt-contrib-concat --save-dev```
+
+##Uglify
+Сжать js
+```npm install grunt-contrib-uglify --save-dev```
+
+##JShint
+Заставляет вас плакать, глядя на код
+```npm install grunt-contrib-jshint --save-dev```
+
+##Imagemin
+Ужимает картинки
+```npm install grunt-contrib-imagemin --save-dev```
+
+##Watch
+Наблюдает за изменениями в лайв-режиме
+```npm install grunt-contrib-watch --save-dev```
+
+##Less
+Компилирует `less` файлы
+```npm install grunt-contrib-less --save-dev```
+
+##Autoprefixer
+Префиксы на `css`.
+Иногда обновляй базу префиксов `npm update caniuse-db`
+```npm install grunt-autoprefixer --save-dev```
+
+##CSS-min
+Минификация `css`
+```npm install grunt-contrib-cssmin --save-dev```
+
+##Заголовок
+Описание
+```plugin```
