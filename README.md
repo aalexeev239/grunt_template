@@ -12,32 +12,37 @@ grunt_template
 
 | Название  | Код  | Описание |
 |--------- | --------------- | -------------
+| Load Tasks | `npm install --save-dev load-grunt-tasks` | Регистрирует в `Gruntfile.js` все загруженные задания|
 | text | `text` | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-| text | text | text |
-
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
+| text | `text` | text |
 
 <!--    <ul>
               <li>
