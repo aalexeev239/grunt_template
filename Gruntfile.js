@@ -181,7 +181,7 @@ module.exports = function(grunt) {
           authKey: 'key1'
         },
         src: '<%= config.dist %>',
-        dest: '<%= pkg.name %>/<%= config.dist %>',
+        dest: '/<%= pkg.name %>/<%= config.dist %>',
         exclusions: ['<%= config.dist %>/**/.DS_Store', '<%= config.dist %>/**/Thumbs.db']
       },
       source: {
@@ -191,7 +191,7 @@ module.exports = function(grunt) {
           authKey: 'key1'
         },
         src: '<%= config.src %>',
-        dest: '<%= pkg.name %>/<%= config.src %>',
+        dest: '/<%= pkg.name %>/<%= config.src %>',
         exclusions: ['<%= config.src %>/**/.DS_Store', '<%= config.src %>/**/Thumbs.db']
       }
     },
