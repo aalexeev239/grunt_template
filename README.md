@@ -13,49 +13,49 @@ grunt_template
 #Плагины
 
 ###Load tasks
-Не паримся с подгрузкой заданий
+Не паримся с подгрузкой заданий [ссыль]()
 
 ```
 npm install --save-dev load-grunt-tasks
 ```
 
 ###Concat
-собирает все файлы в один
+собирает все файлы в один [ссыль]()
 
 ```
 npm install grunt-contrib-concat --save-dev
 ```
 
 ###Uglify
-Сжать js
+Сжать js [ссыль]()
 
 ```
 npm install grunt-contrib-uglify --save-dev
 ```
 
 ###JShint
-Заставляет вас плакать, глядя на код
+Заставляет вас плакать, глядя на код [ссыль](https://www.npmjs.org/package/grunt-contrib-jshint)
 
 ```
 npm install grunt-contrib-jshint --save-dev
 ```
 
 ###Imagemin
-Ужимает картинки
+Ужимает картинки [ссыль]()
 
 ```
 npm install grunt-contrib-imagemin --save-dev
 ```
 
 ###Watch
-Наблюдает за изменениями в лайв-режиме
+Наблюдает за изменениями в лайв-режиме [ссыль]()
 
 ```
 npm install grunt-contrib-watch --save-dev
 ```
 
 ###Less
-Компилирует `less` файлы
+Компилирует `less` файлы [ссыль]()
 
 ```
 npm install grunt-contrib-less --save-dev
@@ -63,21 +63,21 @@ npm install grunt-contrib-less --save-dev
 
 ###Autoprefixer
 Префиксы на `css`.
-Иногда обновляй базу префиксов `npm update caniuse-db`
+Иногда обновляй базу префиксов `npm update caniuse-db` [ссыль]()
 
 ```
 npm install grunt-autoprefixer --save-dev
 ```
 
 ###CSS-min
-Минификация `css`
+Минификация `css` [ссыль]()
 
 ```
 npm install grunt-contrib-cssmin --save-dev
 ```
 
 ###Заголовок
-Описание
+Описание [ссыль]()
 
 ```
 plugin
