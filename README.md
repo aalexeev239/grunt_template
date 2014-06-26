@@ -12,43 +12,53 @@ grunt_template
 
 #Плагины
 
-##Load tasks
+###Load tasks
 Не паримся с подгрузкой заданий
+
 ```npm install --save-dev load-grunt-tasks```
 
-##Concat
+###Concat
 собирает все файлы в один
+
 ```npm install grunt-contrib-concat --save-dev```
 
-##Uglify
+###Uglify
 Сжать js
+
 ```npm install grunt-contrib-uglify --save-dev```
 
-##JShint
+###JShint
 Заставляет вас плакать, глядя на код
+
 ```npm install grunt-contrib-jshint --save-dev```
 
-##Imagemin
+###Imagemin
 Ужимает картинки
+
 ```npm install grunt-contrib-imagemin --save-dev```
 
-##Watch
+###Watch
 Наблюдает за изменениями в лайв-режиме
+
 ```npm install grunt-contrib-watch --save-dev```
 
-##Less
+###Less
 Компилирует `less` файлы
+
 ```npm install grunt-contrib-less --save-dev```
 
-##Autoprefixer
+###Autoprefixer
 Префиксы на `css`.
 Иногда обновляй базу префиксов `npm update caniuse-db`
+
 ```npm install grunt-autoprefixer --save-dev```
 
-##CSS-min
+###CSS-min
 Минификация `css`
+
 ```npm install grunt-contrib-cssmin --save-dev```
 
-##Заголовок
+###Заголовок
 Описание
+
 ```plugin```
