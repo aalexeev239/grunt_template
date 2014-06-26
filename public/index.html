@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Заголовок</title>
+
+  <link href="css/style.min.css" rel="stylesheet" media="screen">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+  
+  <div class="container">
+    <h1 class="text-center">Page template</h1>
+    <div class="row">
+      <div class="col-xs-4">
+        <h2>Hello!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dignissimos, veritatis? Mollitia deserunt totam, reprehenderit quod at magnam optio non ipsa laborum sunt iure aliquam veritatis soluta error nihil, facilis!</p>
+      </div>
+      <div class="col-xs-4">
+        <h2>Touch me to expand</h2>
+        <p>Odit hic a vero consectetur sint? Omnis voluptatum doloremque nam, dignissimos ab, quis quibusdam excepturi sapiente tenetur beatae incidunt eaque assumenda, nisi. Ipsa iure excepturi adipisci veritatis, nam minus vel.</p>
+      </div>
+      <div class="col-xs-4">
+        <h2>Hello!</h2>
+        <p>Debitis, fugiat cupiditate quibusdam ipsum tenetur voluptas ipsa ratione eaque nesciunt eius itaque voluptates fugit expedita temporibus alias necessitatibus. Eaque hic minima, architecto sapiente soluta incidunt iure dolores et repellat.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Здесь код-->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) {
+        document.write('<script src="js/lib/jquery-1.11.1.min.js"><\/script>');
+    }
+  </script>
+  <script src="js/build/scripts.min.js"></script> 
+
+  <!-- PixLayout -->
+  <script src="js/jquery.pixlayout.0.9.7.js"></script>
+  <script>
+    $(function(){
+      $.pixlayout({
+        src: "",
+        opacity: 0.8,
+        tip:50,
+        center: true,
+        clip:true,
+        show: true,
+      })
+    }); 
+  </script>
+</body>
+</html>
