@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         //добавляем дату компиляции
-        banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*\nAuthor: <%= pkg.author.name %> \nEmail: <%= pkg.author.email %> \n<%= pkg.name %> build <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
         src: '<%= config.src %>/js/build/scripts.js',
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
     //css
     cssmin: {
       options: {
-        banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*\nAuthor: <%= pkg.author.name %> \nEmail: <%= pkg.author.email %> \n<%= pkg.name %> build <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       dist: {
         src: '<%= config.src %>/css/style.css',
@@ -174,7 +174,8 @@ module.exports = function(grunt) {
     // чистка файлов
     // фикс от гита
     clean: {
-      empty: ['**/_EMPTY.txt']
+      empty: ['**/_EMPTY.txt'],
+      release: ['<%= config.dist %>/**/*']
     }
   });
 
