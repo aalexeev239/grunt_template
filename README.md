@@ -12,7 +12,7 @@ grunt_template
 
 | Название  | Код  | Описание |
 |--------- | --------------- | -------------
-| text | ´text | text |
+| text | ´text´ | text |
 | text | text | text |
 | text | text | text |
 | text | text | text |
