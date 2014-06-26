@@ -20,6 +20,13 @@ grunt_template
 npm install load-grunt-tasks --save-dev
 ```
 
+###Time grunt
+Показывает время выполнения задания в консоли [Линк](https://www.npmjs.org/package/time-grunt)
+
+```
+npm install --save-dev time-grunt
+```
+
 ###Concat
 Cобирает все файлы в один. [Линк](https://www.npmjs.org/package/grunt-contrib-concat)
 
@@ -35,7 +42,7 @@ npm install grunt-contrib-uglify --save-dev
 ```
 
 ###JShint
-Заставляет вас плакать, глядя на код. [Линк](https://www.npmjs.org/package/grunt-contrib-jshint)
+Заставляет вас плакать, глядя на свой код. [Линк](https://www.npmjs.org/package/grunt-contrib-jshint)
 
 ```
 npm install grunt-contrib-jshint --save-dev
