@@ -1,3 +1,12 @@
+// популярные команды
+// для сокращений проставь алиас grunt --> g
+// grunt build (g b) - собрать проект в public/ и загрузить на гугл диск
+// grunt watch (g w)
+// grunt clean:empty - первоначальная чистка
+// grunt imageoptim - для png
+// grunt imagemin - для jpg
+// grunt sprite - собрать иконки в спрайт
+
 module.exports = function(grunt) {
 
   // Тут мы указываем Grunt, что нужно подгрузить задания
@@ -11,7 +20,8 @@ module.exports = function(grunt) {
     //конфиги папок
     config: {
       src: 'src',
-      dist: 'public'
+      dist: 'public',
+      gdrive: '../../Google Диск/Red-Album/www/'
     },
 
     //конкатенация файлов
@@ -21,7 +31,14 @@ module.exports = function(grunt) {
       //   separator: ';'
       // },
       dist: {
-        src: ['<%= config.src %>/js/lib/*.js', '!<%= config.src %>/js/lib/jquery-1.11.1.min.js', '<%= config.src %>/js/main.js'],    
+        src: [
+          'src/js/lib/bootstrap.min.js',
+          'src/js/lib/retina.js',
+          'src/js/lib/jquery.validate.min.js',
+          'src/js/lib/owl.carousel.min.js',
+          'src/js/lib/jquery.mmenu.min.all.js',
+          '<%= config.src %>/js/main.js'
+          ],    
         dest: '<%= config.src %>/js/build/scripts.js'
       }
     },
@@ -58,7 +75,8 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.src %>/files/',
-          src: ['**/*.{png,jpg,gif}'],
+          // src: ['**/*.{png,jpg,gif}'],
+          src: ['**/*.{jpg,gif}'],
           dest: '<%= config.src %>/files/'
         }]
       },
@@ -67,11 +85,34 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.src %>/img/',
-          src: ['**/*.{png,jpg,gif}'],
+          // src: ['**/*.{png,jpg,gif}'],
+          src: ['**/*.{jpg,gif}'],
           dest: '<%= config.src %>/img/'
         }]
       }
     }, 
+
+    imageoptim: {
+      options: {
+        quitAfter: true
+      },
+      allPngs: {
+        options: {
+          imageAlpha: true,
+          jpegMini: false
+        },
+        src: ['<%= config.src %>/img/**/*.png', '<%= config.src %>/files/**/*.png']
+      }
+      //},
+      // платно
+      // allJpgs: {
+      //   options: {
+      //     imageAlpha: false,
+      //     jpegMini: true
+      //   },
+      //   src: ['<%= config.src %>/img/**/*.jpg', '<%= config.src %>/files/**/*.jpg']
+      // }
+    },
 
     //компилятор лесс
     less: {
@@ -122,7 +163,8 @@ module.exports = function(grunt) {
       //лесс компилировать, префиксовать и подключать
       less: {
         files: ['<%= config.src %>/less/**/*.less'],
-        tasks: ['less', 'autoprefixer', 'cssmin'],
+        tasks: ['notify:less','less', 'autoprefixer', 'cssmin'],
+        // tasks: ['less', 'autoprefixer', 'cssmin'],
         options: {
             spawn: false,
             livereload: true
@@ -166,33 +208,24 @@ module.exports = function(grunt) {
       stuff: {
         expand: true,
         cwd: '<%= config.src %>',
-        src: ['*.{html,png,ico}', 'files/**/*','fonts/**/*','img/**/*'],
+        //файлы, начинающиеся с !, копии не подлежат
+        src: ['!!**/*','!**/!*','*.{html,png,ico,txt,php}', 'files/**/*','fonts/**/*','img/**/*'],
         dest: '<%= config.dist %>'
       },
+      gdrive: {
+        expand: true,
+        cwd: '<%= config.dist %>',
+        src: ['**/*'],
+        dest: '<%= config.gdrive %>'
+      }
     },
 
-    //заливка на ftp
-    //требует файла .ftppass
-    'ftp-deploy': {
-      build: {
-        auth: {
-          host: 'hostname',
-          port: 21,
-          authKey: 'key1'
-        },
-        src: '<%= config.dist %>',
-        dest: '/<%= pkg.name %>/<%= config.dist %>',
-        exclusions: ['<%= config.dist %>/**/.DS_Store', '<%= config.dist %>/**/Thumbs.db']
-      },
-      source: {
-        auth: {
-          host: 'hostname',
-          port: 21,
-          authKey: 'key1'
-        },
-        src: '<%= config.src %>',
-        dest: '/<%= pkg.name %>/<%= config.src %>',
-        exclusions: ['<%= config.src %>/**/.DS_Store', '<%= config.src %>/**/Thumbs.db']
+    notify: {
+      less: {
+        options: {
+          title: 'Готово!',  // optional
+          message: 'LESS файл скомпилирован', //required
+        }
       }
     },
 
@@ -200,14 +233,84 @@ module.exports = function(grunt) {
     // фикс от гита
     clean: {
       empty: ['**/_EMPTY.txt'],
-      release: ['<%= config.dist %>/**/*']
+      // release: ['<%= config.dist %>/**/*']
+      release: ['<%= config.dist %>', '<%= config.gdrive %>']
+    },
+
+    svgmin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/!svg/svg-src',
+          src: ['*.svg'],
+          dest: '<%= config.src %>/!svg/svg-min'
+        }]
+      }
+    },
+    
+    grunticon: {
+      mysvg: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/!svg/svg-min',
+          src: ['*.svg', '*.png'],
+          dest: '<%= config.src %>/!svg/svgicon'
+        }],
+        options: {
+          datasvgcss: 'css/icons.data.svg.css',
+          datapngcss: 'css/icons.data.png.css',
+          urlpngcss: 'css/icons.fallback.css',
+          pngfolder: 'png-grunticon',
+          pngpath: '../img/png-grunticon',
+          defaultWidth: '100',
+          defaultHeight: '100'
+        }
+      }
+    },
+
+    sprite: {
+    'all': {
+
+      // Пропиши тут пути
+      // Location to output spritesheet
+      'src': ['<%= config.src %>/img/sprite/icons/*.png'],
+      'destImg': '<%= config.src %>/img/sprite/sprite_icons.png',
+      'destCSS': 'src/less/sprite_icons.less',
+      'imgPath': '../img/sprite/sprite_icons.png',
+      'cssTemplate': '<%= config.src %>/img/sprite/!sprite.less.mustache',
+
+      // OPTIONAL: Specify algorithm (top-down, left-right, diagonal [\ format],
+          // alt-diagonal [/ format], binary-tree [best packing])
+      // Visual representations can be found below
+      'algorithm': 'binary-tree',
+
+      // OPTIONAL: Specify padding between images
+      'padding': 10,
+
+      // OPTIONAL: Specify engine (auto, phantomjs, canvas, gm, pngsmith)
+      'engine': 'pngsmith',
+
+      // OPTIONAL: Specify CSS format (inferred from destCSS' extension by default)
+          // (stylus, scss, scss_maps, sass, less, json, json_array, css)
+      'cssFormat': 'less',
+
+      // OPTIONAL: Specify settings for algorithm
+      'algorithmOpts': {
+        // Skip sorting of images for algorithm (useful for sprite animations)
+        'sort': false
+      }
     }
+  }
   });
 
   // 4. Указываем, какие задачи выполняются, когда мы вводим «grunt» в терминале
-  grunt.registerTask('default', ['concat','uglify','imagemin','less','autoprefixer','cssmin']);
+  grunt.registerTask('default', ['concat','uglify','imagemin','imageoptim','less','autoprefixer','cssmin']);
   grunt.registerTask('js', ['concat','uglify']);
   grunt.registerTask('css', ['less','autoprefixer','cssmin']);
   grunt.registerTask('pain', ['jshint']);
-  grunt.registerTask('build', ['concat','uglify','imagemin','less','autoprefixer','cssmin','copy']);
+  grunt.registerTask('build', ['concat','uglify','imagemin','imageoptim','less','autoprefixer','cssmin','copy']);
+  grunt.registerTask('b', ['concat','uglify','less','autoprefixer','cssmin','copy']);
+  grunt.registerTask('w', ['watch']);
+  grunt.registerTask('svg', ['svgmin']);
+  grunt.registerTask('svgicon', ['grunticon:mysvg']);
 };
