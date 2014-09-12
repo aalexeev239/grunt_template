@@ -1,104 +1,113 @@
-//@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic);
-@import "bootstrap/bootstrap.less";
+//== Fonts
+//
+//## Font
 
 // @font-face {
-//   font-family: 'fontello';
-//   src: url('../fonts/fontello.eot?123456789');
-//   src: url('../fonts/fontello.eot?123456789#iefix') format('embedded-opentype'),
-//        url('../fonts/fontello.woff?123456789') format('woff'),
-//        url('../fonts/fontello.ttf?123456789') format('truetype'),
-//        url('../fonts/fontello.svg?123456789#fontello') format('svg');
-//   font-weight: normal;
-//   font-style: normal;
+//     font-family: 'kelson_sans_rubold';
+//     src: url('../fonts/kelson_sans_bold_ru.eot');
+//     src: url('../fonts/kelson_sans_bold_ru.eot?#iefix') format('embedded-opentype'),
+//          url('../fonts/kelson_sans_bold_ru.woff') format('woff'),
+//          url('../fonts/kelson_sans_bold_ru.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
 // }
 
-// class^="icon-"]:before,[class*=" icon-"]:before{
-//   font-family: "fontello";
-//   font-style: normal;
-//   font-weight: normal;
-//   speak: none;
- 
-//   display: inline-block;
-//   text-decoration: inherit;
-//   width: 1em;
-//   //margin-right: .2em;
-//   text-align: center;
-//   font-variant: normal;
-//   text-transform: none;
-//   line-height: 1em;
-//   //margin-left: .2em;
-
+// @font-face {
+//     font-family: 'kelson_sans_rulight';
+//     src: url('../fonts/kelson_sans_light_ru.eot');
+//     src: url('../fonts/kelson_sans_light_ru.eot?#iefix') format('embedded-opentype'),
+//          url('../fonts/kelson_sans_light_ru.woff') format('woff'),
+//          url('../fonts/kelson_sans_light_ru.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
 // }
- 
-// .icon-something:before { content: '\e800'; } /* '' */
 
+// @font-face {
+//     font-family: 'kelson_sans_ruregular';
+//     src: url('../fonts/kelson_sans_regular_ru.eot');
+//     src: url('../fonts/kelson_sans_regular_ru.eot?#iefix') format('embedded-opentype'),
+//          url('../fonts/kelson_sans_regular_ru.woff') format('woff'),
+//          url('../fonts/kelson_sans_regular_ru.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
+//== Bootstrap
+//
+//## Bootstrap
+@import "bootstrap/bootstrap.less";
 
+//== USER STYLES
+//
+//## USER STYLES
 
+// #modal-form-recovery {
+//   display: block !important;
+//   opacity: 1 !important;
+// }
 
+body {
+  position: relative; //affix
+  // -webkit-font-smoothing: subpixel-antialiased; // Safari fix
+}
 
-//your styles here:
+.container {
+  // width: 1120px;
+  // padding: 0 10px;
+  // margin: 0 auto;
+  // .clearfix;
+}
 
-.col-xs-4{
-  margin-top: 20px;
+// .link-yellow() {
+//   color: @yellow-normal;
+//   text-decoration: underline;
+//   transition: color 0.2s;
 
-  &>h2{
-    text-align: center;
-    padding: 10px 0;
-    margin-bottom: 20px;
+//   &:hover {
+//     color: #fff;
+//     text-decoration: none;
+//   }
+
+//   &:active,
+//   &.active {
+//     color: #7e6e1f;
+//     color: rgba(255,222,0,0.4);
+//     text-decoration: none;
+//   }
+// }
+
+// Классы со включенным Javascript
+.js {
+  // фильтр городов в хедере
+  .sliding-top {
+    display: none;
   }
 
-  &:nth-child(2){
-    background-color: #922;
-    color: #fff;
-    cursor: pointer;
+  // скроем что-нибудь
+  .js-hide {
+    display: none;
   }
 }
 
+// Классы с выключенным JS
+.no-js {
 
+}
 
-// “Begin at the beginning," the King said, very gravely, 
-// "and go on till you come to the end: then stop.” 
-//
-// ````````````````````````````````````````````````````````````
-// ```````````````````````¶¶``````¶¶`¶`````````````````````````
-// ``````````````````````¶`¶¶¶¶``¶```¶`¶¶¶¶¶```````````````````
-// ``````````````````````¶¶`¶¶`¶¶¶¶¶¶¶¶¶```¶¶``````````````````
-// `````````````````````````¶¶¶¶``````¶¶`````¶¶````````````````
-// ```````````````````````¶¶¶¶¶````````¶``````¶¶```````````````
-// `````````````````````¶¶`¶¶¶`````````¶¶¶¶¶```¶¶``````````````
-// ```````````````````¶¶``¶`¶`````````¶`````¶¶``¶``````````````
-// ``````````````````¶¶```¶¶````````¶¶`````````````````````````
-// `````````````````¶¶```¶`¶``````¶¶¶`````````¶¶```````````````
-// `````````````````¶````¶¶`````¶¶```````````¶`¶```````````````
-// ````````````````¶```¶¶¶¶¶````¶``¶¶¶¶``````¶¶¶```````````````
-// ```````````````¶```¶`¶`¶`````¶```````````¶¶¶````````````````
-// ```````````````¶`¶¶```¶¶`````¶```¶¶¶`````¶``````````````````
-// ``````````````¶```````¶¶```¶¶¶``¶`¶¶`````¶```¶``````````````
-// ````````````¶¶`````````¶¶¶¶¶¶```¶`````````¶``¶``````````````
-// ```````````¶¶``````````¶¶`````¶`````````¶`````¶`````````````
-// ````````¶¶¶``````````````¶¶`¶`¶¶`````````¶¶`¶`¶`````````````
-// ``````¶¶¶````````````````¶`¶``¶`¶¶````¶¶¶¶¶`¶`¶`````````````
-// `````¶¶`````¶¶```````````¶`¶```¶``¶¶``````¶``¶``````````````
-// ```¶¶``````¶`¶¶¶¶¶````¶¶¶¶``¶¶¶`````¶¶¶¶¶¶¶`¶```````````````
-// ``¶¶````````¶``¶¶``¶¶¶`¶``¶¶¶¶````````¶````¶¶```````````````
-// ``¶`````````¶````¶¶¶````¶```¶¶¶````````¶```¶`¶``````````````
-// `¶``````````¶```````¶¶```¶``````¶¶¶````¶```¶`¶``````````````
-// `¶``````````¶`````````¶¶``¶¶```¶`¶¶````¶````¶¶``````````````
-// ``¶`````````¶````¶¶¶¶```¶¶``¶¶¶``¶````¶`¶¶````¶¶````````````
-// ``¶`````````¶``¶¶````¶¶¶`¶¶`````¶````¶¶``¶¶`````¶¶¶`````````
-// ```¶¶````````¶``¶```````¶`¶`¶¶¶`````¶¶¶`¶¶`¶```````¶¶¶``````
-// ````¶¶```````¶¶¶¶````````¶`¶¶``````¶```¶¶```¶¶````````¶¶````
-// ``````¶¶¶```¶````¶```````¶````````¶`¶¶¶¶`¶¶¶``¶`````````¶¶¶`
-// ```````¶`¶¶¶``````¶`````¶````````¶¶¶¶`¶``````¶¶¶````````````
-// `````¶¶¶`¶¶````````¶````````````¶¶`````````````¶¶`````````¶`
-// ````¶¶``¶¶````¶¶¶¶¶¶¶``````````¶¶````````````````¶¶```````¶`
-// ```¶````¶¶¶¶¶¶```````¶```````¶¶````````````````````¶¶¶¶¶¶¶¶`
-// ```¶¶¶¶¶``````````````¶¶````¶¶``````````````````````````````
-// ``¶`````````````````````¶¶¶¶````````````````````````````````
-// ````````````````````````````````````````````````````````````
+// основной блок
+.main {
 
+}
 
+// Импорты
+// @import (less) "owl.carousel.css";
+
+// Импорты
+// @import "sprite_icons.less";
+
+// Хедер
+// @import "zs-header.less";
 
 // End of styles
+
 @import "responsive.less";
