@@ -304,13 +304,15 @@ module.exports = function(grunt) {
   });
 
   // 4. Указываем, какие задачи выполняются, когда мы вводим «grunt» в терминале
-  grunt.registerTask('default', ['concat','uglify','imagemin','imageoptim','less','autoprefixer','cssmin']);
+  //and where is clean task used?
   grunt.registerTask('js', ['concat','uglify']);
   grunt.registerTask('css', ['less','autoprefixer','cssmin']);
+  grunt.registerTask('img', ['imagemin','imageoptim']);
   grunt.registerTask('pain', ['jshint']);
-  grunt.registerTask('build', ['concat','uglify','imagemin','imageoptim','less','autoprefixer','cssmin','copy']);
-  grunt.registerTask('b', ['concat','uglify','less','autoprefixer','cssmin','copy']);
+  grunt.registerTask('b', ['js','css','copy']);
   grunt.registerTask('w', ['watch']);
   grunt.registerTask('svg', ['svgmin']);
   grunt.registerTask('svgicon', ['grunticon:mysvg']);
+  grunt.registerTask('default', ['js','img','css']);
+  grunt.registerTask('build', ['deafult','copy']);
 };
