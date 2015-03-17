@@ -1,0 +1,47 @@
+/*=====================================
+=            GRID CREATION            =
+=====================================*/
+
+makeGreed(cols = 12, gutter = 0px, namespace = 'col')
+  one_col = 100% / cols
+
+  // Row
+  .row
+    cf()
+    if gutter > 0
+      margin-left (- gutter)
+      margin-right (- gutter)
+
+  .col
+    float left
+    if gutter > 0
+      padding 0 gutter
+    else
+      padding 0
+
+  // Columns
+  for $i in 1 .. cols
+    .{s(namespace)}{$i}
+      width $i*one_col
+      @extends .col
+
+
+  // Offsets
+  unless cols < 2
+    for $i in 1 .. cols - 1
+      .{s(namespace)}-offset-{$i}
+        margin-left $i*one_col
+
+/*-----  End of GRID CREATION  ------*/
+
+
+
+.container
+  margin 0 auto
+  padding 0 container_offset
+  width container_width
+  cf()
+
+
+// Make greed
+makeGreed(column_count, column_gutter, grid_namespace)

@@ -1,0 +1,134 @@
+// clearfix
+cf()
+  &:before,
+  &:after
+    content " "
+    display table
+    line-height 0
+
+  &:after
+    clear both
+
+
+
+// clearfix for
+// text-align: justify
+// in inline-blocks
+cf-justify()
+  text-align justify
+  &:after
+    content ' '
+    display inline-block
+    width 100%
+    height 0px
+    text-align justify
+
+
+
+// remove text-decorations
+tdn()
+  text-decoration none
+
+  &:hover,
+  &:active,
+  &:focus
+    text-decoration none
+
+
+
+// reverse default text-decorations
+td-reverse()
+  text-decoration none
+
+  &:hover,
+  &:active,
+  &:focus
+    text-decoration underline
+
+
+// quick transitions
+trs(smth = all, dur = trs_base)
+  transition smth dur
+
+
+// remove default
+// list styles
+clearlist()
+  margin 0
+  padding 0
+  list-style-type none
+
+
+
+
+color-hvr(color = #000, percent = 10%)
+  color color
+
+  &:hover
+    color lighten(color, percent)
+
+  &:active
+    color darken(color, percent)
+
+
+
+
+bg-hvr(color = #000, percent = 10%)
+  background-color color
+
+  &:hover
+    background-color lighten(color, percent)
+
+  &:active
+    background-color darken(color, percent)
+
+
+
+opacity-hvr()
+  opacity 1
+
+  &:hover
+    opacity .8
+
+  &:active
+    opacity .6
+
+
+
+
+// placeholder styling
+placeholder(color =  #000)
+  &::-moz-placeholder
+    color color   // Firefox
+    opacity 1 // See https://github.com/twbs/bootstrap/pull/11526
+  &:-ms-input-placeholder
+    color color // Internet Explorer 10+
+  &::-webkit-input-placeholder
+    color color // Safari and Chrome
+
+
+
+
+
+zeroCentering()
+  display block
+  max-width 100%
+  max-height 100%
+  position absolute
+  left 0
+  top 0
+  right 0
+  bottom 0
+  margin auto
+
+
+
+
+// Bootstrap
+// WebKit-style focus
+tab-focus()
+  // Default
+  outline thin dotted
+  // WebKit
+  outline 5px auto -webkit-focus-ring-color
+  outline-offset -2px
