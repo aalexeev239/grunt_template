@@ -86,7 +86,7 @@ module.exports = function(grunt) {
         dest: '<%= config.src %>/js/build/script.js'
       },
       plugins: {
-        src: '<%= config.src %>/js/vendor/*.js',
+        src: '<%= config.src %>/js/plugins/*.js',
         dest: '<%= config.src %>/js/build/plugins.js'
       }
     },
