@@ -240,24 +240,16 @@ module.exports = function(grunt) {
 
     replace: {
       dist: {
-        options: {
-          patterns: [
-            {
-              match: /<script src=\"js\/build\/plugins.js/g,
-              replacement: '<script src="js/build/plugins.min.js'
-            },
-            {
-              match: /<script src=\"js\/build\/script.js/g,
-              replacement: '<script src="js/build/script.min.js'
-            }
-          ]
-        },
-        files: [
-          {
-            expand: true,
-            src: ['<%= config.dist %>/*.html']
-          }
-        ]
+        src: '%= config.dist %>/*.html',
+        expand: true,
+        overwrite: true,
+        replacements: [{
+          from: /<script src=\"js\/build\/plugins.js/g,
+          to: '<script src="js/build/plugins.min.js'
+        },{
+          from: /<script src=\"js\/build\/script.js/g,
+          to: '<script src="js/build/script.min.js'
+        }]
       }
     },
 
