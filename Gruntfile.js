@@ -11,6 +11,7 @@ module.exports = function(grunt) {
 
     config: {
       src: 'src',
+      staticHtml: 'src',
       dist: 'public'
     },
 
@@ -268,8 +269,6 @@ module.exports = function(grunt) {
     // FTP
     // ===
 
-    // END FTP
-
     'ftp-deploy': {
       make: {
         auth: {
@@ -304,6 +303,51 @@ module.exports = function(grunt) {
       }
     },
 
+    // END FTP
+
+
+
+
+    // ===========
+    // HTML TASK
+    // ===========
+
+
+    includereplace: {
+      html: {
+        src: '*.html',
+        dest: '<%= config.staticHtml %>/',
+        expand: true,
+        cwd: '<%= config.staticHtml %>/_pages/',
+        rename: function(dest, src) {
+          if (src.indexOf('_') === 0) {
+            return dest + src.substring(1);
+          }
+          else {
+            return dest + src;
+          }
+        }
+      }
+    },
+
+
+    prettify: {
+      options: {
+        config: '.htmlprettifyrc'
+      },
+      all: {
+        expand: true,
+        cwd: '<%= config.staticHtml %>',
+        ext: '.html',
+        src: ['*.html'],
+        dest: '<%= config.staticHtml %>/'
+      }
+    },
+
+
+    // END HTML TASK
+
+
 
     // =====
     // WATCH
@@ -331,9 +375,13 @@ module.exports = function(grunt) {
       },
 
 
-      livereload: {
-        options: { livereload: true },
-        files: ['<%= config.src %>/**/*.html','<%= config.src %>/css/**/*.css','<%= config.src %>/js/**/*.js']
+      html: {
+        files: ['<%= config.staticHtml %>/_pages/*.html', '<%= config.staticHtml %>/_components/*.html'],
+        tasks: ['html'],
+        options: {
+          spawn: false,
+          livereload: true
+        },
       }
     },
 
@@ -355,6 +403,12 @@ module.exports = function(grunt) {
         options: {
           title: 'Готово!',
           message: 'JS собран! Превосходная работа!'
+        }
+      },
+      html: {
+        options: {
+          title: 'Готово!',
+          message: 'Собран статичный html'
         }
       },
       images: {
@@ -410,6 +464,13 @@ module.exports = function(grunt) {
   ]);
 
 
+  grunt.registerTask('html', [
+    'includereplace',
+    'prettify',
+    'notify:html'
+  ]);
+
+
   grunt.registerTask('cc', [
     'clean:dist',
     'copy',
@@ -425,6 +486,7 @@ module.exports = function(grunt) {
   grunt.registerTask('b', [
     'styles',
     'scripts',
+    'html',
     'cc',
     'ftp-deploy:light'
   ]);
@@ -433,6 +495,7 @@ module.exports = function(grunt) {
   grunt.registerTask('make', [
     'styles',
     'scripts',
+    'html',
     'svg',
     'img',
     'cc',
