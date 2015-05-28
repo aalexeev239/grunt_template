@@ -57,7 +57,10 @@ figure
 // Images
 // =========================
 img
+  display inline-block
   vertical-align top
+  max-width 100%
+  height auto
 
 
 
@@ -165,7 +168,11 @@ h6
 // Tables
 // =========================
 // table
-//   width 100%
+
+td
+th
+  padding 5px 10px
+  border 1px solid #000
 
 
 
@@ -194,6 +201,13 @@ a
 // =========================
 // Inputs
 // =========================
-// input[type="text"]
-// textarea
-//
+input[type="text"]
+textarea
+  display inline-block
+
+  &:focus
+    outline none
+
+button
+  &:focus
+    outline none
