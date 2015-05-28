@@ -242,7 +242,7 @@ module.exports = function(grunt) {
 
     replace: {
       dist: {
-        src: '%= config.dist %>/*.html',
+        src: '<%= config.dist %>/*.html',
         expand: true,
         overwrite: true,
         replacements: [{
