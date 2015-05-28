@@ -1,46 +1,22 @@
-<!DOCTYPE html>
-<!--[if lte IE 9 ]><html lang="ru" class="no-js ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html lang="ru" class="no-js">
-  <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, maximum-scale=1">
-    <title>Главная</title>
-    <link href="css/style.min.css" rel="stylesheet" media="screen">
-    <script src="js/lib/grunticon.loader.js"></script>
-    <script>
-      document.documentElement.className =
-        document.documentElement.className.replace("no-js", "js");
-      grunticon(["css/grunticon-icons.data.svg.css", "css/grunticon-icons.data.png.css", "css/grunticon-icons.fallback.css"], grunticon.svgLoadedCallback);
-    </script>
-    <noscript>
-      <link href="css/grunticon-icons.fallback.css" rel="stylesheet">
-    </noscript>
-    <!--[if lte IE 9]>
-  <script src="js/lib/html5shiv.min.js"></script>
-  <script src="js/lib/html5shiv-printshiv.min.js"></script>
-  <link rel="stylesheet" href="css/ie9.css">
-  <![endif]-->
+@@include('../_components/page-head.html')
   </head>
   <body>
     <div class="page-wrapper">
+
       <header class="page-header">
         h
       </header>
+
       <main class="page-content">
         <h1>Чеклист</h1>
         <ol>
           <li>Вы смогли открыть страницу - значит html собрался правильно</li>
           <li>Есть красный фон - значит стили собрались правильно</li>
           <li>Откройте консоль. Видите 'hey there'? Значит со скриптами порядок</li>
-          <li>C свг все ок, если есть
-            <i class="icon-test"></i>
-          </li>
+          <li>C свг все ок, если есть <i class="icon-test"></i></li>
         </ol>
       </main>
+
       <footer class="page-footer">
         f
       </footer>
@@ -62,14 +38,14 @@
     <script src="_assets/jquery.pixlayout.0.9.7.js"></script>
     <script>
       if (!true) { // замени на true чтобы показать скрин
-        $(function() {
+        $(function(){
           $.pixlayout({
             src: "_assets/screenshot.png", // путь к картинке
             opacity: 0.6,
             top: 0,
             left: 0,
             // center: true,
-            clip: true,
+            clip:true,
             show: true,
           })
         });
