@@ -417,6 +417,12 @@ module.exports = function(grunt) {
           message: 'svg спрайт сформирован!'
         }
       },
+      noftp: {
+        options: {
+          title: 'Не могу залить на фтп',
+          message: 'проверьте наличие файла .ftppass в корне проекта'
+        }
+      }
     }
 
   });
@@ -427,6 +433,16 @@ module.exports = function(grunt) {
 
 
   // Tasks
+  if (grunt.file.exists(__dirname, '.ftppass')) {
+    grunt.registerTask('ftp_l', ['ftp-deploy:light']);
+    grunt.registerTask('ftp_m', ['ftp-deploy:make']);
+  } else {
+    grunt.registerTask('ftp_l', ['notify:noftp']);
+    grunt.registerTask('ftp_m', ['notify:noftp']);
+  }
+
+
+
   grunt.registerTask('styles', [
     'stylus',
     'autoprefixer',
@@ -482,7 +498,7 @@ module.exports = function(grunt) {
     'scripts',
     'html',
     'cc',
-    'ftp-deploy:light'
+    'ftp_l'
   ]);
 
 
@@ -493,6 +509,6 @@ module.exports = function(grunt) {
     'svg',
     'img',
     'cc',
-    'ftp-deploy:make'
+    'ftp_m'
   ]);
 };
