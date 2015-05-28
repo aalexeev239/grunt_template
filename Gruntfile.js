@@ -84,7 +84,7 @@ module.exports = function(grunt) {
           '<%= config.src %>/js/app/*.js',
           '<%= config.src %>/js/main.js'
         ],
-        dest: '<%= config.src %>/js/build/script.js'
+        dest: '<%= config.src %>/js/build/scripts.js'
       },
       plugins: {
         src: '<%= config.src %>/js/plugins/*.js',
@@ -95,8 +95,8 @@ module.exports = function(grunt) {
 
     uglify: {
       app: {
-        src: '<%= config.src %>/js/build/script.js',
-        dest: '<%= config.src %>/js/build/script.min.js'
+        src: '<%= config.src %>/js/build/scripts.js',
+        dest: '<%= config.src %>/js/build/scripts.min.js'
       },
       plugins: {
         src: '<%= config.src %>/js/build/plugins.js',
@@ -184,6 +184,7 @@ module.exports = function(grunt) {
           urlpngcss    : 'css/grunticon-icons.fallback.css',
           previewhtml  : '_grunticon-preview.html',
           pngfolder    : 'img/svg/png-grunticon',
+          loadersnippet: 'js/lib/grunticon.loader.js',
           pngpath      : '../img/svg/png-grunticon',
           template     : '<%= config.src %>/_svg/_template.hbs',
           defaultWidth : '20px',
@@ -231,7 +232,8 @@ module.exports = function(grunt) {
           '!**/styl/**', // no styl
           '!**/_*/**', // ignore '_name' folders
           '!**/js/**', // ignore all js
-          'js/build/*'
+          'js/build/*',
+          'js/lib/*'
           ],
         dest: '<%= config.dist %>'
       }
@@ -247,8 +249,8 @@ module.exports = function(grunt) {
           from: /<script src=\"js\/build\/plugins.js/g,
           to: '<script src="js/build/plugins.min.js'
         },{
-          from: /<script src=\"js\/build\/script.js/g,
-          to: '<script src="js/build/script.min.js'
+          from: /<script src=\"js\/build\/scripts.js/g,
+          to: '<script src="js/build/scripts.min.js'
         }]
       }
     },
