@@ -1,69 +1,80 @@
 <!DOCTYPE html>
-<html class="no-js">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>TITLE</title>
-
-  <link href="css/style.min.css" rel="stylesheet" media="screen">
-
-  <script>
-    document.documentElement.className =
-       document.documentElement.className.replace("no-js","js");
-  </script>
-
-
-  <script>
-    /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
-
-    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
-
-
-    grunticon(["css/grunticon-icons.data.svg.css", "css/grunticon-icons.data.png.css", "css/grunticon-icons.fallback.css"], grunticon.svgLoadedCallback);
-  </script>
-  <noscript><link href="css/grunticon-icons.fallback.css" rel="stylesheet"></noscript>
-
-</head>
-
-<body>
-  <div class="page-wrapper">
-
-    <header class="page-header">
-      h
-    </header>
-
-    <main class="page-content">
-      m
-    </main>
-
-    <footer class="page-footer">
-      f
-    </footer>
-  </div>
-
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-
-  <script src="js/build/plugins.js"></script>
-  <script src="js/build/script.js"></script>
-
-  <!-- PixLayout -->
-  <script src="_assets/!jquery.pixlayout.0.9.7.js"></script>
-  <!-- <script>
-    $(function(){
-      $.pixlayout({
-        src: "_assets/smth.jpg",
-        opacity: 0.4,
-        top: 48,
-        center: true,
-        clip:true,
-        show: true,
-      })
-    });
-  </script> -->
-  <!-- / PixLayout -->
-</body>
+<!--[if lte IE 9 ]><html lang="ru" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="ru" class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, maximum-scale=1">
+    <title>Главная</title>
+    <link href="css/style.min.css" rel="stylesheet" media="screen">
+    <script src="js/lib/grunticon.loader.js"></script>
+    <script>
+      document.documentElement.className =
+        document.documentElement.className.replace("no-js", "js");
+      grunticon(["css/grunticon-icons.data.svg.css", "css/grunticon-icons.data.png.css", "css/grunticon-icons.fallback.css"], grunticon.svgLoadedCallback);
+    </script>
+    <noscript>
+      <link href="css/grunticon-icons.fallback.css" rel="stylesheet">
+    </noscript>
+    <!--[if lte IE 9]>
+  <script src="js/lib/html5shiv.min.js"></script>
+  <script src="js/lib/html5shiv-printshiv.min.js"></script>
+  <link rel="stylesheet" href="css/ie9.css">
+  <![endif]-->
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="page-header">
+        h
+      </header>
+      <main class="page-content">
+        <h1>Чеклист</h1>
+        <ol>
+          <li>Вы смогли открыть страницу - значит html собрался правильно</li>
+          <li>Есть красный фон - значит стили собрались правильно</li>
+          <li>Откройте консоль. Видите 'hey there'? Значит со скриптами порядок</li>
+          <li>C свг все ок, если есть
+            <i class="icon-test"></i>
+          </li>
+        </ol>
+      </main>
+      <footer class="page-footer">
+        f
+      </footer>
+    </div>
+    <script src="//yastatic.net/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      if (!window.jQuery) {
+        document.write('<script src="js/lib/jquery2.1.3.min.js"><\/script>');
+      }
+    </script>
+    <script src="js/build/plugins.js"></script>
+    <script src="js/build/scripts.js"></script>
+    <!--
+  =========================
+      ТОЛЬКО ДЛЯ ВЕРСТКИ
+  =========================
+  -->
+    <!-- PixLayout -->
+    <script src="_assets/jquery.pixlayout.0.9.7.js"></script>
+    <script>
+      if (!true) { // замени на true чтобы показать скрин
+        $(function() {
+          $.pixlayout({
+            src: "_assets/screenshot.png", // путь к картинке
+            opacity: 0.6,
+            top: 0,
+            left: 0,
+            // center: true,
+            clip: true,
+            show: true,
+          })
+        });
+      }
+    </script>
+    <!-- / PixLayout -->
+  </body>
 </html>

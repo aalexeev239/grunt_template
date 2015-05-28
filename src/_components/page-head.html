@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!--[if lte IE 8 ]> <html class="old-ie no-js"> <![endif]-->
-<!--[if (gt IE 8)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lte IE 9 ]><html lang="ru" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ru" class="no-js"><!--<![endif]-->
 
 <head>
   <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
   <link href="css/style.min.css" rel="stylesheet" media="screen">
 
-  <script src="svgicon/grunticon.loader.js"></script>
+  <script src="js/lib/grunticon.loader.js"></script>
 
   <script>
     document.documentElement.className =
@@ -23,7 +23,8 @@
   <noscript><link href="css/grunticon-icons.fallback.css" rel="stylesheet"></noscript>
 
 
-  <!--[if lt IE 9]>
+  <!--[if lte IE 9]>
   <script src="js/lib/html5shiv.min.js"></script>
-  <link rel="stylesheet" href="css/old-ie.css">
+  <script src="js/lib/html5shiv-printshiv.min.js"></script>
+  <link rel="stylesheet" href="css/ie9.css">
   <![endif]-->
