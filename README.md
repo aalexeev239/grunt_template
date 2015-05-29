@@ -3,11 +3,11 @@
 1. Исправьте данные в `package.json`
 2. Переименуйте и настройте `TEMPLATE.sublime-package`
 3. Обновите `.gitignore`
-4. Добавьте файл `.ftppass` согласно требованиям плагина [https://github.com/zonak/grunt-ftp-deploy](ftp-deploy)
+4. Добавьте файл `.ftppass` согласно требованиям плагина [ftp-deploy](https://github.com/zonak/grunt-ftp-deploy)
 5. Удалите это вступление
 
 ##Начало
-1. Запустите команду `npm i` (unix: без [https://docs.npmjs.com/getting-started/fixing-npm-permissions](sudo))
+1. Запустите команду `npm i` (unix: без [sudo](https://docs.npmjs.com/getting-started/fixing-npm-permissions))
 2. Запустите задачу `grunt make`
 3. Убедитесь, что проект создался. Появится файл `src/index.html` с чеклистом.
 
