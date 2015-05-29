@@ -69,6 +69,16 @@ module.exports = function(grunt) {
       }
     },
 
+
+    csslint: {
+      options: {
+        csslintrc: '.csslintrc',
+      },
+      style: {
+        src: '<%= config.src %>/css/style.css'
+      }
+    },
+
     // END STYLES TASK
 
 
@@ -448,6 +458,7 @@ module.exports = function(grunt) {
     'autoprefixer',
     'cmq',
     'cssmin',
+    'csslint',
     'notify:stylus'
   ]);
 
