@@ -2,8 +2,8 @@
 root = true
 
 [*]
-indent_style = tabs
-indent_size = 4
+indent_style = space
+indent_size = 2
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -12,15 +12,12 @@ trim_trailing_whitespace = true
 trim_trailing_whitespace = false
 
 [*.styl]
-indent_size = 2
 insert_final_newline = true
 
 [*.html]
-indent_size = 2
 insert_final_newline = true
 
 [*.js]
-indent_size = 2
 insert_final_newline = true
 
 [*.json]
