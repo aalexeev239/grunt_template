@@ -25,42 +25,13 @@ body
 
 
 
-// =========================
-// Reset fonts for relevant elements
-// =========================
-input
-button
-select
-textarea
-  font-family inherit
-  font-size inherit
-  line-height inherit
-
-
-
-
-
-// =========================
-// Figures
-//
-// We reset this here because previously Normalize had no `figure` margins. This
-// ensures we don't break anyone's use of the element.
-// =========================
-figure
-  margin 0
-
-
-
 
 
 // =========================
 // Images
 // =========================
 img
-  display inline-block
-  vertical-align top
-  max-width 100%
-  height auto
+  img-responsive(inline-block)
 
 
 
@@ -70,9 +41,9 @@ img
 // Horizontal rules
 // =========================
 hr
-  margin-top lh_base
-  margin-bottom lh_base
+  margin 1em 0
   border 0
+  border-top 1px solid #000
 
 
 
@@ -132,16 +103,13 @@ h6
 // .muted
 //   color c_muted
 
-// .semibold
-//   font-weight 600
-
 // strong
 //   font-weight 700
 //   font-family ff_base
 
 // small,
 // .small
-//   font-size fz_small
+//   font-size 80%
 
 // .text-huge
 //   font-size fz_huge
@@ -163,11 +131,18 @@ h6
 //   li + li
 //     margin-top 5px
 
+// dl
+//   dt
+//   dd
+//     margin 0
+
 
 // =========================
 // Tables
 // =========================
-// table
+table
+  border-collapse collapse
+  border-spacing 0
 
 td
 th
@@ -196,18 +171,102 @@ a
     text-decoration none
 
 
+// reverse default text-decorations
+td-reverse()
+  text-decoration none
+
+  &:hover
+  &:active
+  &:focus
+    text-decoration underline
+
+.td-reverse
+  td-reverse()
+
+
+// remove text-decorations
+tdn()
+  text-decoration none
+
+  &:hover
+  &:active
+  &:focus
+    text-decoration none
+
+.tdn
+  tdn()
+
+
 
 
 // =========================
 // Inputs
 // =========================
+input
+button
+select
+textarea
+  font-family inherit
+  font-size inherit
+  line-height inherit
+
+  // &:focus
+  //   outline none
+
+
+// iOS fixes
+button
+html input[type="button"]
+input[type="reset"]
+input[type="submit"]
+  -webkit-appearance none
+  cursor pointer
+  border 0
+
+button[disabled]
+html input[disabled]
+  cursor default
+
+button::-moz-focus-inner
+input::-moz-focus-inner
+  border 0
+  padding 0
+
+button,
+select
+  text-transform none
+
+
 input[type="text"]
 textarea
   display inline-block
+  vertical-align top
 
-  &:focus
-    outline none
 
-button
-  &:focus
-    outline none
+
+
+// =========================
+// Quotes
+// =========================
+q
+  quotes "\00ab" "\00bb" "\201e" "\201c"
+
+
+
+// =========================
+// Animations
+// =========================
+
+@keyframes shake {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  15%, 45%, 75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  30%, 60%, 90% {
+    transform: translate3d(10px, 0, 0);
+  }
+}

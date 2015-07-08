@@ -2,34 +2,100 @@
 // GENERATED FROM MIXINS
 // =========================
 
+
+
+// clearfix
+cf()
+  &:before,
+  &:after
+    content " "
+    display table
+    line-height 0
+
+  &:after
+    clear both
+
 .cf
 .clearfix
   cf()
+
+
+
+
+
+// clearfix for
+// text-align: justify
+// in inline-blocks
+cf-justify()
+  text-align justify
+  &:after
+    content ' '
+    display inline-block
+    width 100%
+    height 0
+    text-align justify
 
 
 .cf-justify
   cf-justify()
 
 
+
+
+
+// remove default
+// list styles
+clearlist()
+  margin 0
+  padding 0
+  list-style-type none
+
 .clearlist
   clearlist()
 
+
+
+
+
+hide-text()
+  font 0/0 a
+  color transparent
+  text-shadow none
+  background-color transparent
+  border 0
+
+text-hide()
+  hide-text()
 
 .hide-text
 .text-hide
   hide-text()
 
 
-.img-responsive
-  img-responsive()
 
+
+
+text-overflow()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
 
 .text-overflow
   text-overflow()
 
 
-.tdn
-  tdn()
+
+
+
+img-responsive(display=block)
+  display display
+  width s('100%\9')
+  max-width 100%
+  height auto
+
+.img-responsive
+  img-responsive()
+
 
 /*===============================
 =            HELPERS            =
@@ -60,8 +126,35 @@
 .fz0
   font-size 0 !important
 
+.m0
+  margin 0 !important
+
+.mt0
+  margin-top 0 !important
+
+.mr0
+  margin-right 0 !important
+
 .mb0
   margin-bottom 0 !important
+
+.ml0
+  margin-left 0 !important
+
+.p0
+  padding 0 !important
+
+.pt0
+  padding-top 0 !important
+
+.pr0
+  padding-right 0 !important
+
+.pb0
+  padding-bottom 0 !important
+
+.pl0
+  padding-left 0 !important
 
 .nowrap
   white-space nowrap

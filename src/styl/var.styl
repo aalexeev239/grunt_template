@@ -1,45 +1,62 @@
 /*==========  GRID  ==========*/
 
-grid_namespace = 'col';
+// for light grid
 
-column_count = 12;
-column_gutter = 10px;
+grid_namespace = 'col'
 
-container_inner = 940px;
-container_offset = column_gutter;
-container_width = container_inner + ( 2 * container_offset );
+column_count = 12
+column_gutter = 10px
 
+container_inner = 940px
+container_offset = column_gutter
+container_width = container_inner + ( 2 * container_offset )
+
+
+
+/*==========  MEDIA  ==========*/
+
+// for csswizardry grids
+
+$palm = "(max-width: 759px)"
+$lap  = "(min-width: 760px) and (max-width: 999px)"
+$port = "(max-width: 999px)"
+$desk = "(min-width: 1000px)"
+
+$container_min = 320px
+$container_max = 100%
+
+$desk_offset = 0
+$lap_offset  = 0
+$palm_offset = 0
 
 /*==========  TYPE  ==========*/
 
 // font-family
-ff_base = Arial, "Helvetica Neue", Helvetica, sans-serif;
+ff_base = "Helvetica Neue", Helvetica, Arial, sans-serif
 
 // font-size
-fz_base = 14px;
-
+fz_base = 14px
 
 // line-height
-lh_base = 16px;
+lh_base = 1.2
 
 
 /*==========  COLORS  ==========*/
 
-c_base = #000;
-c_link = #1aa0dd;
+c_base = #000
+c_link = #1aa0dd
 
 
 // background-color
-bg_base = #fff;
-
+bg_base = #fff
 
 /*==========  Z-INDEXES  ==========*/
 
-z_base = 10;
+z_base = 10
 
 
 /*==========  TRANSITIONS  ==========*/
 
-time = .1s;
+time = .1s
 
 
