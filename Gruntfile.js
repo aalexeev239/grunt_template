@@ -317,24 +317,6 @@ module.exports = function(grunt) {
     // ===========
 
 
-    includereplace: {
-      html: {
-        src: '*.html',
-        dest: '<%= config.staticHtml %>/',
-        expand: true,
-        cwd: '<%= config.staticHtml %>/_pages/',
-        rename: function(dest, src) {
-          if (src.indexOf('_') === 0) {
-            return dest + src.substring(1);
-          }
-          else {
-            return dest + src;
-          }
-        }
-      }
-    },
-
-
     prettify: {
       options: {
         config: '.htmlprettifyrc'
@@ -345,6 +327,28 @@ module.exports = function(grunt) {
         ext: '.html',
         src: ['*.html'],
         dest: '<%= config.staticHtml %>/'
+      }
+    },
+
+
+    assemble: {
+      options: {
+        onProduction: false,
+        helpers: ['<%= config.src %>/_templates/helpers/*.js'],
+        flatten: true,
+        assets: '<%= config.src %>',
+        layoutdir: '<%= config.src %>/_templates/layouts/',
+        layout: 'default.hbs',
+        data: '<%= config.src %>/_data/*.{json,yml}',
+        partials: '<%= config.src %>/_templates/partials/*.hbs'
+      },
+      pages: {
+        files: [{
+          cwd: '<%= config.src %>/_templates/pages/',
+          dest: '<%= config.src %>',
+          expand: true,
+          src: '**/*.hbs'
+        }]
       }
     },
 
@@ -486,8 +490,8 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('html', [
-    'includereplace',
-    'prettify',
+    'assemble',
+    'newer:prettify',
     'notify:html'
   ]);
 

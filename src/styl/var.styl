@@ -2,7 +2,7 @@
 
 // for light grid
 
-grid_namespace = 'col'
+$grid_namespace = 'col'
 
 column_count = 12
 column_gutter = 10px
@@ -17,42 +17,52 @@ container_width = container_inner + ( 2 * container_offset )
 
 // for csswizardry grids
 
-$palm = "(max-width: 759px)"
-$lap  = "(min-width: 760px) and (max-width: 999px)"
-$port = "(max-width: 999px)"
-$desk = "(min-width: 1000px)"
+$lap_br = 768
+$desk_br = 1240 + 2*$desk_offset
 
 $container_min = 320px
-$container_max = 100%
+// $container_max = max(1440px, $desk_br)
+$container_max = 1260px // fix fo fit 1280 screen [AA] 2015/11/07
+
+$palm = "(max-width: "+unit(($lap_br - 1), 'px')+")"
+$lap  = "(min-width: "+unit($lap_br, 'px')+") and (max-width: "+unit(($desk_br - 1), 'px')+")"
+$port = "(max-width: "+unit(($desk_br - 1), 'px')+")"
+$desk = "(min-width: "+unit($desk_br, 'px')+")"
 
 $desk_offset = 0
 $lap_offset  = 0
 $palm_offset = 0
 
+// @2x Images (Pixel Ratio of 1.25+)
+$retina2x = "only screen and (-o-min-device-pixel-ratio: 5/4), only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 1.25dppx)"
+
+// @3x Images (Pixel Ratio of 2.25+)
+$retina3x = "only screen and (-o-min-device-pixel-ratio: 9/4), only screen and (-webkit-min-device-pixel-ratio: 2.25), only screen and (min-device-pixel-ratio: 2.25), only screen and (min-resolution: 2.25dppx)"
+
 /*==========  TYPE  ==========*/
 
 // font-family
-ff_base = "Helvetica Neue", Helvetica, Arial, sans-serif
+$ff_base = "Helvetica Neue", Helvetica, Arial, sans-serif
 
 // font-size
-fz_base = 14px
+$fz_base = 14px
 
 // line-height
-lh_base = 1.2
+$lh_base = 1.2
 
 
 /*==========  COLORS  ==========*/
 
-c_base = #000
-c_link = #1aa0dd
+$c_base = #000
+$c_link = #1aa0dd
 
 
 // background-color
-bg_base = #fff
+$bg_base = #fff
 
 /*==========  Z-INDEXES  ==========*/
 
-z_base = 10
+$z_base = 10
 
 
 /*==========  TRANSITIONS  ==========*/

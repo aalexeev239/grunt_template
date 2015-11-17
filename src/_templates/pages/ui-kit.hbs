@@ -1,0 +1,69 @@
+---
+title: "UI kit"
+PixLayout: false
+PLimage: "screenshot.png"
+PLopacity: 0.6
+PLcenter: false
+PLtop: 25
+PLleft: 635
+customStyle: '.ui-section {margin: 50px 0; } .ui-section > .grid {margin-top: 30px; margin-bottom: 30px;} #ui-nav {display: inline-block; min-width: 200px; padding: 10px; margin: 20px 0; border: 2px dashed #643228; } #ui-nav a{ display: block; };'
+---
+<div class="container">
+  <h1 class="page-title">UI kit</h1>
+
+  <div id="ui-nav">
+    <strong>Оглавление:</strong>
+
+  </div>
+
+  <section class="ui-section" id="buttons">
+    <h1><a href="#buttons" class="link-thin js-ui-link ">Кнопки</a></h1>
+    <p>Любая кнопка должна иметь общекнопочный класс <b>.btn</b> (допускается доп стилизация в противоречии бэму через миксованный селектор <b>.example__btn.btn</b>), класс цвета и класс размера. Disabled – атрибут <b>disabled</b>, или класс <b>.disabled</b>,или класс <b>.btn--disabled</b></p>
+    {{>ui-buttons}}
+  </section>
+
+  <section class="ui-section" id="tabs">
+    <h1><a href="#tabs" class="link-thin js-ui-link ">Табы</a></h1>
+    <p>
+      Можно использовать как для переключения табов на странице (документация – <a href="http://getbootstrap.com/javascript/#tabs">http://getbootstrap.com/javascript/#tabs</a>), так и как обычный набор ссылок
+    </p>
+    {{>ui-tabs}}
+  </section>
+
+
+  <section class="ui-section" id="type">
+    <h1><a href="#type" class="link-thin js-ui-link ">Типографика</a></h1>
+    {{>ui-type}}
+  </section>
+
+  <section class="ui-section" id="forms">
+    <h1><a href="#forms" class="link-thin js-ui-link ">Формы</a></h1>
+    {{>ui-forms}}
+  </section>
+
+  <section class="ui-section" id="collapse">
+    <h1><a href="#collapse" class="link-thin js-ui-link">Аккордеон(коллапс)</a></h1>
+    {{>ui-collapse}}
+    <br>
+    <p>Чтобы сделать гармошки аккордеона независимыми друг от друга, добавьти в корневой блок атрибут <b>data-collapse="multiple"</b>. <br>
+    Регулируйте раскрытие/закрытие по умолчанию классами <b>opened</b>.</p>
+    <br>
+    {{#withHash isMultiple=true}}
+      {{>ui-collapse}}
+    {{/withHash}}
+
+  </section>
+
+  <script type="text/javascript">
+    var uiLinks = document.querySelectorAll('.js-ui-link'),
+        uiNav = document.getElementById('ui-nav')
+        len = uiLinks.length;
+
+    for (var i = 0; i < len; i++) {
+
+      var clone = uiLinks[i].cloneNode(true);
+      uiNav.appendChild(clone);
+    };
+
+  </script>
+</div>

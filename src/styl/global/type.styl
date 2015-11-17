@@ -8,7 +8,7 @@
 
 
 html
-  font-size 10px
+  font-size 16px
   -webkit-tap-highlight-color rgba(0,0,0,0)
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
@@ -16,11 +16,11 @@ html
 
 
 body
-  font-family ff_base
-  font-size fz_base
-  line-height lh_base
-  color c_base
-  background-color bg_base
+  font-family $ff_base
+  font-size $fz_base
+  line-height $lh_base
+  color $c_base
+  background-color $bg_base
   box-sizing border-box
 
 
@@ -65,10 +65,10 @@ h5
 h6
 .h6
   display block
-  font-family ff_base
+  font-family $ff_base
   font-weight 700
   margin 0
-  color c_base
+  color $c_base
 
 // h1
 // .h1
@@ -93,26 +93,18 @@ h6
 // =========================
 // base text
 // =========================
-// p
-//   margin 0 0 12px
-
-// .lead
-//   font-size fz_huge
-//   font-weight 600
+p
+  margin margin 1em 0
 
 // .muted
-//   color c_muted
+//   color $c_muted
 
 // strong
 //   font-weight 700
-//   font-family ff_base
 
 // small,
 // .small
 //   font-size 80%
-
-// .text-huge
-//   font-size fz_huge
 
 
 
@@ -157,17 +149,17 @@ th
 // Links
 // =========================
 a
-  color c_link
+  color $c_link
   text-decoration underline
 
   &:hover
-    color c_link
+    color $c_link
     text-decoration none
 
   &:active
   &:focus
     outline none
-    color c_link
+    color $c_link
     text-decoration none
 
 
@@ -212,6 +204,8 @@ textarea
 
   // &:focus
   //   outline none
+
+  // &.error
 
 
 // iOS fixes

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lte IE 9 ]><html lang="ru" class="no-js lte-ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="ru" class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=1260">
+    <title>{{title}}</title>
+    <link href="{{assets}}/css/style.min.css" rel="stylesheet" media="screen">
+    <script src="{{assets}}/js/lib/grunticon.loader.js"></script>
+    <script>
+        document.documentElement.className =
+            document.documentElement.className.replace("no-js", "js");
+        grunticon(["css/grunticon-icons.data.svg.css", "css/grunticon-icons.data.png.css", "css/grunticon-icons.fallback.css"], grunticon.svgLoadedCallback);
+    </script>
+    <noscript>
+        <link href="{{assets}}/css/grunticon-icons.fallback.css" rel="stylesheet">
+    </noscript>
+    <!--[if lte IE 9]>
+    <script src="{{assets}}/js/lib/html5shiv.min.js"></script>
+    <link rel="stylesheet" href="css/oldie.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="{{assets}}/js/lib/es5-shim.min.js"></script>
+    <![endif]-->
+    {{#if customStyle}}
+      <style>
+        {{customStyle}}
+      </style>
+    {{/if}}
+  </head>
+  <body>
+    <div class="page-wrapper">
+      {{> page-header}}
+
+      {{> body}}
+
+
+      {{> page-footer}}
+
+    </div>
+    <script src="//yastatic.net/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      if (!window.jQuery) {
+        document.write('<script src="{{assets}}/js/lib/jquery2.1.3.min.js"><\/script>');
+        }
+    </script>
+    <script src="{{assets}}/js/build/plugins.js"></script>
+    <script src="{{assets}}/js/build/scripts.js"></script>
+
+    {{#unless onProduction}}
+      {{#if PixLayout}}
+      <!--
+      =========================
+          ТОЛЬКО ДЛЯ ВЕРСТКИ
+      =========================
+      -->
+      <!-- PixLayout -->
+      <script src="{{assets}}/_assets/jquery.pixlayout.0.9.7.js"></script>
+      <script>
+          $(function(){
+            $.pixlayout({
+              src: "{{assets}}/_assets/{{ PLimage }}.png", // путь к картинке
+              opacity: {{ PLopacity }},
+              top: {{ PLtop }},
+              left: {{ PLleft }},{{#if PLcenter}}
+              center: true, {{/if}}
+              clip:true,
+              show: true,
+            })
+          });
+      </script>
+      <!-- / PixLayout -->
+      {{/if}}
+    {{/unless}}
+    </body>
+</html>

@@ -7,6 +7,7 @@
     "email": "alexeev.andrey.a@gmail.com"
   },
   "devDependencies": {
+    "assemble": "^0.4.42",
     "clean-css": "^2.2.2",
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^0.7.6",
@@ -23,12 +24,15 @@
     "grunt-ftp-deploy": "^0.1.10",
     "grunt-grunticon": "^2.1.7",
     "grunt-imageoptim": "^1.4.1",
-    "grunt-include-replace": "^3.0.0",
+    "grunt-newer": "^1.1.1",
     "grunt-notify": "^0.3.0",
     "grunt-prettify": "^0.4.0",
     "grunt-svgmin": "^1.0.0",
     "grunt-text-replace": "^0.4.0",
+    "handlebars-helper-repeat": "^0.3.1",
+    "handlebars-helpers": "^0.5.8",
     "load-grunt-tasks": "^0.6.0",
+    "object-assign": "^3.0.0",
     "time-grunt": "^0.3.2"
   }
 }

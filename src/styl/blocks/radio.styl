@@ -1,0 +1,25 @@
+.radio
+  position relative
+
+
+  &__inp
+    position absolute
+    opacity 0
+    z-index -1
+
+
+  &__ind
+
+    &:before
+      content ''
+      position absolute
+
+    &:after
+      content ''
+      position absolute
+
+  &__inp:checked + &__ind
+    &:before
+      position absolute
+    &:after
+      position absolute
